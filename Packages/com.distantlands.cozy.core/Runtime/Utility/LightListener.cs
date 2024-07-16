@@ -10,32 +10,32 @@ namespace DistantLands.Cozy
 
         public Material onMat;
         public Material offMat;
-        private new Light light;
-        private Renderer render;
+        private Light _light;
+        private Renderer _render;
 
         public void TurnOnLight()
         {
 
-            if (light == null)
-                light = GetComponent<Light>();
-            if (render == null)
-                render = GetComponent<Renderer>();
+            if (_light == null)
+                _light = GetComponent<Light>();
+            if (_render == null)
+                _render = GetComponent<Renderer>();
 
-            render.material = onMat;
-            light.enabled = true;
+            _render.material = onMat;
+            _light.enabled = true;
 
         }
 
         public void TurnOffLight()
         {
 
-            if (light == null)
-                light = GetComponent<Light>();
-            if (render == null)
-                render = GetComponent<Renderer>();
+            if (_light == null)
+                _light = GetComponent<Light>();
+            if (_render == null)
+                _render = GetComponent<Renderer>();
 
-            render.material = offMat;
-            light.enabled = false;
+            _render.material = offMat;
+            _light.enabled = false;
         }
     }
 }

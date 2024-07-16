@@ -2,7 +2,6 @@ using PlayFab.Internal;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using UnityEditor;
 using UnityEngine;
 
 namespace PlayFab
@@ -69,18 +68,14 @@ namespace PlayFab
         public const string SdkVersion = "2.196.240621";
         public const string BuildIdentifier = "adobuild_unitysdk_167";
         public const string VersionString = "UnitySDK-2.196.240621";
-        public static string EngineVersion = UnityEngine.Application.unityVersion;
+        public static string EngineVersion = Application.unityVersion;
         public static string PlatformString;
 
         public const string DefaultPlayFabApiUrl = "playfabapi.com";
 
         private static PlayFabSharedSettings GetSharedSettingsObjectPrivate()
         {
-            PlayFabSharedSettings settingsList = AssetDatabase.LoadAssetAtPath<PlayFabSharedSettings>("Assets/_Data/Secrets/PlayFabSdk/PlayFabSharedSettings.asset");
-            if (!settingsList)
-            {
-                Debug.LogWarning("If you are upgrading your SDK, you can ignore this warning as PlayFabSharedSettings will be imported soon. If you are not upgrading your SDK and you see this message, you should re-download the latest PlayFab source code.");
-            }
+            PlayFabSharedSettings settingsList = Resources.Load<PlayFabSharedSettings>("_Data/Secrets/PlayFabSharedSettings");
             return settingsList;
         }
 

@@ -178,7 +178,7 @@ namespace DistantLands.Cozy
         public bool followEditorCamera = true;
         public bool disableSunAtNight = true;
         public bool handleSceneLighting = true;
-        private bool sceneFogRendering = true;
+        private bool _sceneFogRendering = true;
         public bool dontDestroyOnLoad;
 
         #endregion
@@ -627,7 +627,7 @@ namespace DistantLands.Cozy
 #if UNITY_EDITOR
         public void UpdateSkydomePositionAndScale(SceneView sceneView)
         {
-            sceneFogRendering = sceneView.sceneViewState.fogEnabled;
+            _sceneFogRendering = sceneView.sceneViewState.fogEnabled;
 
             if (freezeUpdateInEditMode || !followEditorCamera || Application.isFocused)
                 return;
@@ -699,7 +699,7 @@ namespace DistantLands.Cozy
                 if (Application.isPlaying)
                     Shader.SetGlobalFloat(CozyShaderIDs.CZY_FogDepthMultiplierID, fogDensityMultiplier * fogDensity);
                 else
-                    Shader.SetGlobalFloat(CozyShaderIDs.CZY_FogDepthMultiplierID, fogDensityMultiplier * fogDensity * (sceneFogRendering ? 1 : 0));
+                    Shader.SetGlobalFloat(CozyShaderIDs.CZY_FogDepthMultiplierID, fogDensityMultiplier * fogDensity * (_sceneFogRendering ? 1 : 0));
 #else
                 Shader.SetGlobalFloat(CozyShaderIDs.CZY_FogDepthMultiplierID, fogDensityMultiplier * fogDensity);
 #endif

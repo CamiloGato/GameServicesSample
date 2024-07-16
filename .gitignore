@@ -75,3 +75,4 @@ crashlytics-build.properties
 .vscode
 Assets/_Data/Secrets
 Assets/_Data/Secrets.meta
+Assets/Resources/_Data
