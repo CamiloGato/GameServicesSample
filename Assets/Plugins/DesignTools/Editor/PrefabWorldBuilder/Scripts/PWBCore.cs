@@ -765,6 +765,7 @@ namespace PluginMaster
                     foreach (var v4_0_item in v4_0_items)
                     {
                         var data = LineManager.instance.GetItem(v4_0_item._id);
+                        if (data == null) continue;
                         var v4_0_poses = v4_0_item._objectPoses;
                         data.RemoveAllPoses();
                         foreach (var v4_0_pose in v4_0_poses)
@@ -781,6 +782,7 @@ namespace PluginMaster
                     foreach (var v4_0_item in v4_0_items)
                     {
                         var data = ShapeManager.instance.GetItem(v4_0_item._id);
+                        if (data == null) continue;
                         var v4_0_poses = v4_0_item._objectPoses;
                         data.RemoveAllPoses();
                         foreach (var v4_0_pose in v4_0_poses)
@@ -797,6 +799,7 @@ namespace PluginMaster
                     foreach (var v4_0_item in v4_0_items)
                     {
                         var data = TilingManager.instance.GetItem(v4_0_item._id);
+                        if (data == null) continue;
                         var v4_0_poses = v4_0_item._objectPoses;
                         data.RemoveAllPoses();
                         foreach (var v4_0_pose in v4_0_poses)

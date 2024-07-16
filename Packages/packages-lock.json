@@ -7,6 +7,44 @@
       "dependencies": {},
       "hash": "fbe0bf85155f42f8832205f7b3ac3df571ada33e"
     },
+    "com.distantlands.cozy.blocks": {
+      "version": "file:com.distantlands.cozy.blocks",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.distantlands.cozy.core": "3.4.0"
+      }
+    },
+    "com.distantlands.cozy.core": {
+      "version": "file:com.distantlands.cozy.core",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.distantlands.cozy.habits": {
+      "version": "file:com.distantlands.cozy.habits",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.distantlands.cozy.core": "3.1.0"
+      }
+    },
+    "com.distantlands.cozy.link": {
+      "version": "file:com.distantlands.cozy.link",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.distantlands.cozy.core": "3.1.0"
+      }
+    },
+    "com.distantlands.cozy.plume": {
+      "version": "file:com.distantlands.cozy.plume",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.distantlands.cozy.core": "3.1.0"
+      }
+    },
     "com.eflatun.scenereference": {
       "version": "https://github.com/starikcetin/Eflatun.SceneReference.git#4.1.1",
       "depth": 0,
@@ -148,7 +186,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.multiplayer.playmode": {
-      "version": "1.2.0",
+      "version": "1.2.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {

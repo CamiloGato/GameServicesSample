@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8784589167059104605}
   - component: {fileID: 8784589167061971837}
   - component: {fileID: 8784589167060873661}
-  - component: {fileID: 7589868117364876996}
+  - component: {fileID: 6506138834528603089}
   m_Layer: 0
   m_Name: cheese-circle
   m_TagString: Untagged
@@ -88,7 +88,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7589868117364876996
+--- !u!64 &6506138834528603089
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

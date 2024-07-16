@@ -1,0 +1,18 @@
+{
+    "name": "DistantLands.Cozy.Link.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:5492a51f516277543a92d676903897bf",
+        "GUID:1491147abca9d7d4bb7105af628b223e",
+        "GUID:9f4f5bf029cebb64f983b7bdc29f62a1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

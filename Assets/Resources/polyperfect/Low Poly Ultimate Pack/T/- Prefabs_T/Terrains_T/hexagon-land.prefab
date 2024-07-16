@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4537101334781494}
   - component: {fileID: 33742685241259304}
   - component: {fileID: 23425133558847058}
-  - component: {fileID: 64532039559505934}
+  - component: {fileID: 64408342836237972}
   m_Layer: 0
   m_Name: hexagon-land
   m_TagString: Untagged
@@ -87,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64532039559505934
+--- !u!64 &64408342836237972
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,4 +108,4 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: 27e000bf28662764389f84c280de1e84, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 27e000bf28662764389f84c280de1e84, type: 3}

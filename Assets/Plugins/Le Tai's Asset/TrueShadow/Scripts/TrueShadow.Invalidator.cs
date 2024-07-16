@@ -263,7 +263,11 @@ public partial class TrueShadow
         }
         else if (Graphic is TMPro.TMP_SubMeshUI stmp)
         {
-            SpriteMesh = string.IsNullOrEmpty(stmp.textComponent.text) ? null : stmp.mesh;
+            var isEmpty = string.IsNullOrEmpty(stmp.textComponent.text);
+#if UNITY_2022_2_OR_NEWER
+            isEmpty |= !stmp.canvasRenderer.GetMesh(); // This is a different mesh than stmp.mesh
+#endif
+            SpriteMesh = isEmpty ? null : stmp.mesh;
         }
 #endif
         SetLayoutDirty();

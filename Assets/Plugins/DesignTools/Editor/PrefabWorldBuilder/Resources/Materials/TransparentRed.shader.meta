@@ -11,6 +11,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 185406
   packageName: Prefab World Builder
-  packageVersion: 4.1
+  packageVersion: 4.1.1
   assetPath: Assets/Plugins/DesignTools/Editor/PrefabWorldBuilder/Resources/Materials/TransparentRed.shader
-  uploadId: 672313
+  uploadId: 673310

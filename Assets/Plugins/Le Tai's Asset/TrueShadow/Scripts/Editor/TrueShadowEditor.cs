@@ -38,8 +38,8 @@ public class TrueShadowEditor : UnityEditor.Editor
     static bool showAdvanced;
 
     static Texture    warningIcon;
-    static GUIStyle   hashWarningStyle;
-    static GUIContent hashWarningLabel;
+    static GUIStyle   warningStyle;
+    static GUIContent warningIconLabel;
 
     void OnEnable()
     {
@@ -77,9 +77,9 @@ public class TrueShadowEditor : UnityEditor.Editor
                         ?.GetValue(null) as Texture;
         }
 
-        hashWarningLabel = new GUIContent(warningIcon);
-        hashWarningStyle = new GUIStyle(EditorGUIUtility.GetBuiltinSkin(EditorSkin.Inspector)
-                                                        .FindStyle("WordWrappedLabel")) {
+        warningIconLabel = new GUIContent(warningIcon);
+        warningStyle = new GUIStyle(EditorGUIUtility.GetBuiltinSkin(EditorSkin.Inspector)
+                                                    .FindStyle("WordWrappedLabel")) {
             richText = true
         };
     }
@@ -150,6 +150,19 @@ public class TrueShadowEditor : UnityEditor.Editor
                 }
             }
 
+            using (var _ = new VerticalScope(EditorStyles.helpBox))
+            {
+                warningIconLabel.text = "Shadows will not updates";
+                GUILayout.Label(warningIconLabel);
+                GUILayout.Label($"Sub-Mesh objects' shadows will not updates automatically to avoid large performance cost.\n\n" +
+                                $"Call trueShadow.{nameof(TrueShadow.CopyToTMPSubMeshes)}() after you modify the text or shadow",
+                                warningStyle);
+
+                if (GUILayout.Button("More info and code example", EditorStyles.linkLabel))
+                {
+                    Application.OpenURL("https://leloctai.com/trueshadow/docs/articles/tmp.html");
+                }
+            }
             HelpBox($"Sub-Mesh objects' shadows will not updates automatically to avoid large performance cost.\n\n" +
                     $"Call trueShadow.{nameof(TrueShadow.CopyToTMPSubMeshes)}() after you modify the text or shadow",
                     MessageType.Warning, true);
@@ -249,15 +262,15 @@ public class TrueShadowEditor : UnityEditor.Editor
         if (casterTypes.Count == 0)
             return;
 
-        hashWarningLabel.text = "Shadow may not update with changes";
+        warningIconLabel.text = "Shadow may not update with changes";
 
         using (var _ = new VerticalScope(EditorStyles.helpBox))
         {
-            GUILayout.Label(hashWarningLabel);
+            GUILayout.Label(warningIconLabel);
             GUILayout.Label($"True Shadow can't tell 2 <i>{casterTypes[0].Name}</i> apart." +
                             $" The shadow may not update when the <i>{casterTypes[0].Name}</i> changes.\n" +
                             $"To fix this, set the shadow CustomHash, or disable shadow caching for this element.",
-                            hashWarningStyle);
+                            warningStyle);
 
             if (GUILayout.Button("More info on CustomHash", EditorStyles.linkLabel))
             {
