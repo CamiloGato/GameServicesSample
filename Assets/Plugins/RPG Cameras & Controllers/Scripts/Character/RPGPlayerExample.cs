@@ -14,9 +14,11 @@ namespace JohnStairs.RCC.Character {
         }
 
         protected virtual void Update() {
+            #if ENABLE_LEGACY_INPUT_MANAGER
             if (Input.GetKeyDown(KeyCode.L)) {
                 EnableTargetLock = !EnableTargetLock;
             }
+            #endif
         }
 
         public virtual bool CanFly() {
